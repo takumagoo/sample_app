@@ -23,8 +23,10 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list = List.find(params[:id])
   end
-
+  
+  private
   # ストロングパラメータ
   def list_params
     params.require(:list).permit(:title, :body)
