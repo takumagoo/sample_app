@@ -8,10 +8,11 @@
     <% else %>
       <%= image_tag 'no_image', size: "200x200" %>
     <% end %>
-  </div>
-  <div class="list-comment">
-    <span class="list-body"><%= list.body %></span>   <!--Listモデルのbodyカラムに入っているデータを呼び出す-->
-    <span class="list-body"><%= list_to list.title, list_path(list.id) %></span>
+
+    <div class="list-comment">
+      <span class="list-body"><%= list.body %></span>   <!--Listモデルのbodyカラムに入っているデータを呼び出す-->
+      <span class="list-title"><%= link_to list.title, list_path(list.id) %></span>
+   </div>
   </div>
 <% end %>
 </div>
