@@ -11,19 +11,19 @@ class ListsController < ApplicationController
     list.save
     # 4. トップ画面へリダイレクト
     # redirect_to '/top'
-    flash[notice] = "投稿が成功しました"
-    
+    flash[:notice] = "投稿が成功しました"
+
     redirect_to list_path(list.id)
   end
-    @list = List.new(list_params)
-    if @list.save
-      redirect_to list_path(@list.id)
-    else
-      render :new
-      # @lists = List.all
-      # render :index
-    end
-    
+    # @list = List.new(list_params)
+    # if @list.save
+    #   redirect_to list_path(@list.id)
+    # else
+    #   render :new
+    #   # @lists = List.all
+    #   # render :index
+    # end
+
 
   def index
     @lists=List.all
